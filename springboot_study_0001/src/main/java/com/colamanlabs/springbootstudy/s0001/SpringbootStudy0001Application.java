@@ -43,34 +43,9 @@ public class SpringbootStudy0001Application {
     @EventListener(ApplicationReadyEvent.class)
     public void init()
     {
-//        ConsoleLogger.println(String.format("[SpringbootTest001Application/init] BEGIN"));
-//        
-//        ConsoleLogger.println(String.format("[SpringbootTest001Application/init] applicationContext:[%s]", applicationContext));
-//        
-//        String[] arrBeanNames = applicationContext.getBeanDefinitionNames();
-//        
-////        ConsoleLogger.println(String.format("[SpringbootTest001Application/init] applicationContext.getApplicationName():[%s]", applicationContext.getApplicationName()));
-//        
-//        
-//        ConsoleLogger.println(String.format("[SpringbootTest001Application/init] applicationContext.getApplicationName():[%s]", applicationContext.getApplicationName()));
-//        
-//        
-//        
-//        for (int i = 0; i < arrBeanNames.length; ++i)
-//        {
-//            System.out.println(String.format("i:[%d]\tarrBeanNames:[%s]", i, arrBeanNames[i]));
-//        }
-//        
-//        ConsoleLogger.println(String.format("[SpringbootTest001Application/init] END"));
-        
-        
-
         log.debug(String.format("[SpringbootStudy0001Application/init] BEGIN"));
-        
 
         checkApplicationContext();
-        
-        
         
         log.debug(String.format("[SpringbootStudy0001Application/init] END"));
     }	
@@ -80,6 +55,7 @@ public class SpringbootStudy0001Application {
     public void checkApplicationContext()
     {
         log.debug(String.format("[SpringbootStudy0001Application/checkApplicationContext] BEGIN"));
+        
         /*
          * [SpringbootStudy0001Application/checkApplicationContext] applicationContext:[org.springframework.context.annotation.AnnotationConfigApplicationContext@2b3df9ff, started on Thu Feb 08 23:18:54 KST 2024]
          */
