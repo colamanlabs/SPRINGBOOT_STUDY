@@ -3,6 +3,7 @@ package com.colamanlabs.springbootstudy.s0001;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -46,6 +47,9 @@ public class SpringbootStudy0001Application {
         log.debug(String.format("[SpringbootStudy0001Application/init] BEGIN"));
 
         checkApplicationContext();
+        
+        
+        checkValueAnnotation();
         
         log.debug(String.format("[SpringbootStudy0001Application/init] END"));
     }	
@@ -106,6 +110,74 @@ public class SpringbootStudy0001Application {
          */
         
         log.debug(String.format("[SpringbootStudy0001Application/checkApplicationContext] END"));
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    /*
+@Value
+https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/annotation/Value.html
+
+
+     */
+    
+    
+    @Value("${app.name}")
+    private final String appName = null;
+    
+    @Value("${app.name.sample01}")
+    private final String appNameSample01 = null;
+    
+    @Value("${app.name.sample02}")
+    private final String appNameSample02 = null;
+    
+    @Value("${app.name.sample03}")
+    private final String appNameSample03 = null;        
+    
+    @Value("${app.name.sample04}")
+    private final String appNameSample04 = null;    
+    
+    
+    public void checkValueAnnotation()
+    {
+        log.debug(String.format("[SpringbootStudy0001Application/checkValueAnnotation] BEGIN"));
+        log.debug(String.format("[SpringbootStudy0001Application/checkValueAnnotation] appName:[%s]", appName));
+        
+        
+        /*
+         * 
+app.name=springboot_study_0001
+app.name.sample1="springboot_study_0001_sample1"
+app.name.sample2="springboot_study_0001_sample2
+
+
+[SpringbootStudy0001Application/checkValueAnnotation] appName:[springboot_study_0001]
+
+
+프로퍼티 지정시 "" 를 추가하면 "" 이 포함이 된다.
+[SpringbootStudy0001Application/checkValueAnnotation] appName:[springboot_study_0001]
+[SpringbootStudy0001Application/checkValueAnnotation] appNameSample01:["springboot_study_0001_sample01"]
+[SpringbootStudy0001Application/checkValueAnnotation] appNameSample02:["springboot_study_0001_sample02]
+[SpringbootStudy0001Application/checkValueAnnotation] appNameSample03:[springboot_study_0001_sample03 param1 param2 param3 param4 param5]
+[SpringbootStudy0001Application/checkValueAnnotation] appNameSample04:[springboot_study_0001_sample04 param1 param2 ]
+
+
+프로퍼티 지정은 개행문자 나올때 까지 인식된다.
+app.name.sample04=springboot_study_0001_sample04 param1 param2 
+param3 param4 param5
+
+
+         */
+        log.debug(String.format("[SpringbootStudy0001Application/checkValueAnnotation] appNameSample01:[%s]", appNameSample01));
+        log.debug(String.format("[SpringbootStudy0001Application/checkValueAnnotation] appNameSample02:[%s]", appNameSample02));
+        log.debug(String.format("[SpringbootStudy0001Application/checkValueAnnotation] appNameSample03:[%s]", appNameSample03));
+        log.debug(String.format("[SpringbootStudy0001Application/checkValueAnnotation] appNameSample04:[%s]", appNameSample04));
+        log.debug(String.format("[SpringbootStudy0001Application/checkValueAnnotation] END"));
     }
 
 }
