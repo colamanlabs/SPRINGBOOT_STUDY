@@ -67,7 +67,7 @@ public class SpringbootStudy0002Application
 //        myComponent0001.checkJdbcTemplate_0002_1();
 //        myComponent0001.checkJdbcTemplate_0002_2();
 //        myComponent0001.checkJdbcTemplate_0003_1();
-//        myComponent0001.checkJdbcTemplate_0002_1();
+        myComponent0001.checkJdbcTemplate_0002_1();
         
         log.info(String.format("[SpringbootStudy0002Application/test0001] END"));
     }
