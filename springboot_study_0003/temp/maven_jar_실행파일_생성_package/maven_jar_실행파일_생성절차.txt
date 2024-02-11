@@ -1,0 +1,17 @@
+
+
+1. 프로젝트명 우클릭
+
+
+2. "Run As" -> "4 Maven Build" 선택
+
+
+3.
+- Goals 에 "package" 입력하고
+- profiles 는 비운다("")
+- User settings 는 비운다("")
+
+- 아래 체크박스에서 "Skip Tests" 를 체크한다.
+	- 나머지는 모두 비운다.
+	
+	
