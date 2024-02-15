@@ -23,5 +23,17 @@
 - SpringBoot + NIO TCP echo server
 
 
+## 5. 0005
+- SpringBatch 테스트
+- 환경 구성중 확인한 예제가 동작하지 않아, 진행 중단함
+- 원인분석결과 SpringBoot v3 에서는 SpringBatch v5 로 개발해야 함
+
+
+## 6. 0006
+- SpringBatch 테스트
+- SpringBoot v3 에서는 SpringBatch v5 로 개발해야 함에 따라, v2 로 지정하는 방법 적용
+- job 생성, tasklet 생성, 간단한 start(), next() 를 통한 흐름제어 적용
+
+
 ... 
 (작성중)
