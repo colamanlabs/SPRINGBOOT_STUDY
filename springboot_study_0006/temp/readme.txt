@@ -67,4 +67,25 @@ https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
 
 
 
-	
+
+
+
+https://docs.spring.io/spring-batch/reference/domain.html
+
+주요 키워드
+JobRepository, JobLauncher, Job, Step, ItemReader, ItemProcesor, ItemWriter 
+
+Job, JobInstance, JobExecution
+
+
+
+스프링배치 완벽가이드 2장 까지 확인함 (p 70)
+
+
+ 
+
+
+
+
+
+
