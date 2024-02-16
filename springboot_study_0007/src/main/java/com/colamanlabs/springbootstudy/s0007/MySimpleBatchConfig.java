@@ -1,11 +1,16 @@
 package com.colamanlabs.springbootstudy.s0007;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobParametersValidator;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.JobScope;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepScope;
+import org.springframework.batch.core.job.CompositeJobParametersValidator;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.core.step.tasklet.Tasklet;
@@ -135,10 +140,33 @@ public class MySimpleBatchConfig
     @Bean
     public Job createJob0001()
     {
+        JobParametersValidator jobParamValidator = createValidator0001();        
         Step step0001 = createStep0001();
         JobBuilder jobBuilder = jobBuilderFactory.get(JOB_0001);
-        Job job = jobBuilder.start(step0001).build();
+        Job job = jobBuilder.start(step0001).validator(jobParamValidator).build();
         return job;
+    }
+    
+    /*
+     * JobBuilder 에서는 하나의 JobParameterValidator 지정만 가능하지만,
+     * CompositeJobParameterValidator 를 통해 복수개의 유효성 검증기 사용이 가능하다.
+     * 
+     * https://javadoc.io/static/org.springframework.batch/spring-batch-core/2.1.9.RELEASE/org/springframework/batch/core/job/CompositeJobParametersValidator.html
+     */
+    
+    @Bean
+    public CompositeJobParametersValidator createValidator0001()
+    {
+        /*
+         * JobParametersValidator 리스트를 만들고, CompositeJobParametersValidator 를 생성해서, setValidators 에 밸리데이터 리스트를 넣는다.
+         */
+        List<JobParametersValidator> listValidator = new ArrayList<JobParametersValidator>();
+        MyParameterValidator validator0 = new MyParameterValidator();
+        listValidator.add(validator0);
+        
+        CompositeJobParametersValidator compositeValidator = new CompositeJobParametersValidator();
+        compositeValidator.setValidators(listValidator);
+        return compositeValidator;
     }
 
     
