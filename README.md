@@ -39,6 +39,9 @@
 - SpringBatch 테스트
 - JobParameters 조회 테스트
 - StepScope 테스트(늦은 바인딩 허용)
+- JobParametersValidator 를 통한 잡 파라미터 유효성 확인
+- CompositeJobParametersValidator 를 통한 복수개의 Validator 지정 방법 확인
+...
 
-... 
+  
 (작성중)
