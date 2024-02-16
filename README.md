@@ -35,5 +35,10 @@
 - job 생성, tasklet 생성, 간단한 start(), next() 를 통한 흐름제어 적용
 
 
+## 7. 0007
+- SpringBatch 테스트
+- JobParameters 조회 테스트
+- StepScope 테스트(늦은 바인딩 허용)
+
 ... 
 (작성중)
