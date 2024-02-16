@@ -22,8 +22,8 @@ public class SpringbootStudy0008Application
     @EventListener(ApplicationReadyEvent.class)
     public void init()
     {
-        log.info(String.format("[SpringbootStudy0007Application/init] BEGIN"));
-        log.info(String.format("[SpringbootStudy0007Application/init] END"));
+        log.info(String.format("[SpringbootStudy0008Application/init] BEGIN"));
+        log.info(String.format("[SpringbootStudy0008Application/init] END"));
     }
     
 }
