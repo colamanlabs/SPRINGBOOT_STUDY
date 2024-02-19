@@ -63,7 +63,7 @@
 - ExecutionContextPromotionListener 를 통한 승격방법 테스트
 
 
- ## 11. 0010 (진행중)
+ ## 11. 0012 (진행중)
 - SpringBatch 테스트
 - 스텝 알아보기(page 129)
 	
