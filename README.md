@@ -53,6 +53,10 @@
 - 잡 리스너 적용하기
 
 
+## 10. 0010 (진행중)
+- SpringBatch 테스트
+- ExecutionContext 테스트
+
 ...
 
   
