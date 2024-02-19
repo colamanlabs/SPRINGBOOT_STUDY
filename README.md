@@ -53,10 +53,20 @@
 - 잡 리스너 적용하기
 
 
-## 10. 0010 (진행중)
+## 10. 0010
 - SpringBatch 테스트
 - ExecutionContext 테스트
 
+
+## 11. 0011
+- SpringBatch 테스트
+- ExecutionContextPromotionListener 를 통한 승격방법 테스트
+
+
+ ## 11. 0010 (진행중)
+- SpringBatch 테스트
+- 스텝 알아보기(page 129)
+	
 ...
 
   
