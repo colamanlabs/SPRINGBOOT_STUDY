@@ -14,6 +14,7 @@ import org.springframework.batch.core.job.CompositeJobParametersValidator;
 import org.springframework.batch.core.job.DefaultJobParametersValidator;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
+import org.springframework.batch.core.listener.JobListenerFactoryBean;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -164,7 +165,11 @@ public class MySimpleBatchConfig
         JobParametersValidator jobParamValidator = createValidator0001();        
         Step step0001 = createStep0001();
         JobBuilder jobBuilder = jobBuilderFactory.get(JOB_0001);
-        Job job = jobBuilder.start(step0001).validator(jobParamValidator).incrementer(runIdIncrementer).build();
+
+        //        Job job = jobBuilder.start(step0001).validator(jobParamValidator).incrementer(runIdIncrementer).listener(new JobLoggerListener()).build();
+        
+        Job job = jobBuilder.start(step0001).validator(jobParamValidator).incrementer(runIdIncrementer).listener(JobListenerFactoryBean.getListener(new JobLoggerListener2())).build();
+        
         return job;
     }
     
