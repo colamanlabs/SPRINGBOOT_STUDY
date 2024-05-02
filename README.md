@@ -1,4 +1,4 @@
-# SPRINGBOOT_STUDY
+# STUDY_SPRINGBOOT
 
  springboot 기술이해를 위한 테스트 소스들 입니다.
  
